@@ -28,7 +28,7 @@ set cursorline
 set cursorcolumn
 set colorcolumn=101
 
-" Temporary files stuff
+"" Temporary files stuff
 set nobackup
 set writebackup
 set noswapfile
