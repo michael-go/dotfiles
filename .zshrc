@@ -19,7 +19,9 @@ zplug load
 if zplug check zsh-users/zsh-history-substring-search; then
   zmodload zsh/terminfo
   bindkey "$terminfo[kcuu1]" history-substring-search-up
+  bindkey "^[[A" history-substring-search-up
   bindkey "$terminfo[kcud1]" history-substring-search-down
+  bindkey "^[[B" history-substring-search-down
 fi
 
 # pure
