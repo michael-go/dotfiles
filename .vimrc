@@ -41,6 +41,12 @@ au CursorHold * checktime
 "" mouse
 set mouse=a
 
+"" Formatting
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
 " Plugins config
 
 "" tomasr/molokai
