@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " General config
@@ -31,8 +32,8 @@ set colorcolumn=101
 
 "" Temporary files stuff
 set nobackup
-set writebackup
 set noswapfile
+""" note: nowritebackup is set below for coc
 
 "" Update with changes on disk
 set autoread
@@ -87,3 +88,52 @@ let g:airline_theme="badwolf"
 
 "" Plug 'junegunn/fzf'
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+
+"" Plug 'neoclide/coc.nvim'
+set hidden " TextEdit might fail if hidden is not set.
+set nowritebackup " Some servers have issues with backup files, see #649.
+set cmdheight=2 " Give more space for displaying messages.
+set updatetime=300 " default 4000 (4s) is too much delay
+set shortmess+=c " Don't pass messages to |ins-completion-menu|.
+set signcolumn=yes " Always show the signcolumn, otherwise it would shift the text each time diagnostics appear/resolve
+""" Use tab for trigger completion with characters ahead and navigate.
+""" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+""" other plugin before putting this into your config.
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>
+""" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+""" Use `[g` and `]g` to navigate diagnostics
+""" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+""" code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh :CocCommand clangd.switchSourceHeader<CR>
+""" Use K to show documentation in preview window.
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
