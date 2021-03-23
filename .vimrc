@@ -38,6 +38,9 @@ set noswapfile
 set autoread
 au CursorHold * checktime
 
+"" mouse
+set mouse=a
+
 " Plugins config
 
 "" tomasr/molokai
