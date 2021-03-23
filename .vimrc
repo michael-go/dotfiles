@@ -34,6 +34,10 @@ set nobackup
 set writebackup
 set noswapfile
 
+"" Update with changes on disk
+set autoread
+au CursorHold * checktime
+
 " Plugins config
 
 "" tomasr/molokai
