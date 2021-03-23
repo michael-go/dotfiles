@@ -58,6 +58,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set t_Co=256
 set background=dark
 colorscheme molokai
+hi Visual ctermbg=238
+hi VisualNOS ctermbg=240
+hi Comment ctermfg=245
 
 "" rainbow:
 let g:rbpt_colorpairs = [
