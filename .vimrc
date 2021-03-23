@@ -46,6 +46,9 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+""" don't auto insert comment on next line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 " Plugins config
 
