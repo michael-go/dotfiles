@@ -18,7 +18,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " General config
@@ -34,6 +35,7 @@ set writebackup
 set noswapfile
 
 " Plugins config
+
 "" tomasr/molokai
 set t_Co=256
 set background=dark
@@ -66,3 +68,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 "" airline
 let g:airline_theme="badwolf"
+
+"" Plug 'junegunn/fzf'
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
