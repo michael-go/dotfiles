@@ -45,6 +45,7 @@ setopt HIST_IGNORE_SPACE # Don't record an entry starting with a space.
 # aliases
 alias ls='ls --color=auto'
 alias ll='ls -lah'
+alias tmux='tmux -2'
 
 # source profile specific stuff
 source ~/.profile
