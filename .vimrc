@@ -30,6 +30,7 @@ set number
 set cursorline
 set cursorcolumn
 set colorcolumn=101
+au FileType gitcommit set colorcolumn=73
 
 "" Temporary files stuff
 set nobackup
