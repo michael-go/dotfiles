@@ -4,6 +4,8 @@
 * tmux
 * neovim
 * fzf
+* bat
+
 # Extra steps
 ## vim
 ### neoclide/coc.nvim
