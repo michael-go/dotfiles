@@ -46,6 +46,7 @@ setopt HIST_IGNORE_SPACE # Don't record an entry starting with a space.
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias tmux='tmux -2'
+alias git-frh='git fetch && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`'
 
 # source profile specific stuff
 source ~/.profile
