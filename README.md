@@ -1,3 +1,9 @@
+# Dont forget to install:
+* git
+* zsh
+* tmux
+* neovim
+* fzf
 # Extra steps
 ## vim
 ### neoclide/coc.nvim
