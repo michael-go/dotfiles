@@ -50,3 +50,8 @@ alias git-frh='git fetch && git reset --hard origin/`git rev-parse --abbrev-ref 
 
 # source profile specific stuff
 source ~/.profile
+
+# fzf
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
