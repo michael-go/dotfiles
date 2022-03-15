@@ -24,6 +24,10 @@ if zplug check zsh-users/zsh-history-substring-search; then
   bindkey "^[[B" history-substring-search-down
 fi
 
+# move cursor by words
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 # pure
 zstyle :prompt:pure:path color "#add8e6"
 
