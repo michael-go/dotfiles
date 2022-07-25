@@ -46,6 +46,7 @@ def main():
     install_dot(".config/nvim/coc-settings.json")
     install_dot(".gitconfig")
     install_dot(".gitignore_global")
+    install_dot(".fzf.zsh")
 
 
 if __name__ == "__main__":

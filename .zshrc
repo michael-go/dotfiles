@@ -53,10 +53,9 @@ alias tmux='tmux -2'
 alias git-frh='git fetch && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`'
 alias bat='batcat'
 
+# fzf
+source ~/.fzf.zsh
+
 # source profile specific stuff
 source ~/.profile
-
-# fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
 
