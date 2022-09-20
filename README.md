@@ -5,6 +5,7 @@
 * neovim
 * fzf
 * bat
+* node (https://github.com/Schniz/fnm)
 
 # Extra steps
 ## vim
