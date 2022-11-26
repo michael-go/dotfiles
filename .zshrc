@@ -51,7 +51,9 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias tmux='tmux -2'
 alias git-frh='git fetch && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`'
-alias bat='batcat'
+if [ -x "$(command -v batcat)" ]; then
+  alias bat='batcat'
+fi
 
 # fzf
 source ~/.fzf.zsh
